@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import EventList from './components/EventList';
 import VolunteerList from './components/VolunteerList';
@@ -13,26 +13,15 @@ import { GlobalStyles } from './styles/global';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { Navbar } from './components/Navbar';
+import { NoMatch } from './components/NoMatch';
 
 function App() {
-  const { state } = useContext(store);
-  const [loading, setLoading] = useState(true);
-  const [eventList, setEventList] = useState(state);
+  const { state: eventList } = useContext(store);
 
   const [theme, toggleTheme, componentMounted] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
-  // filter events by most recent as default
-  // useEffect(() => {
-  //   dispatch({ type: 'SORT_BY', sort: 'most recent' });
-  // }, [dispatch]);
-
-  useEffect(() => {
-    setEventList(state);
-    setLoading(false);
-  }, [state]);
-
-  if (!componentMounted || loading) {
+  if (!componentMounted) {
     return <div>Loading...</div>;
   }
 
@@ -51,9 +40,9 @@ function App() {
               <Route path="/">
                 <EventList eventList={eventList} />
               </Route>
-              {/* <Route>
-              <NoMatch />
-            </Route> */}
+              <Route>
+                <NoMatch />
+              </Route>
             </Switch>
           </div>
         </Router>

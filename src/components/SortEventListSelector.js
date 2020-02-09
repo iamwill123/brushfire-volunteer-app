@@ -12,7 +12,7 @@ export const SortEventListSelector = () => {
   const { dispatch } = useContext(store);
 
   const handleChange = event => {
-    let name = event.target.innerText;
+    const name = event.target.innerText;
     const updatedSort = sortArray.map(value =>
       value.name === name
         ? { ...value, selected: !value.selected }

@@ -1,11 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { store } from '../store';
-// import { formatDateTime } from '../utils/dateGenerator';
 import { slugifyTitle } from '../utils/slugifyTitle';
 
 const Event = ({ event }) => {
-  // let match = useRouteMatch();
   const {
     id,
     title,
@@ -14,42 +12,16 @@ const Event = ({ event }) => {
     startEndDate,
     startEndTime,
     volunteer,
-    imgURL,
-    skills,
-    desc,
-    goodFor,
-    requirements
+    imgURL
   } = event;
 
   const [toggleVolunteer, setToggleVolunteer] = useState(volunteer);
-  // const [volunteerAtDate, setVolunteerAtDate] = useState(volunteerAt);
-
-  // console.log(volunteerAtDate);
 
   const { dispatch } = useContext(store);
 
-  // useEffect(() => {
-  //   setVolunteerAtDate(volunteerAt);
-  // }, [volunteerAt]);
-
   const toggleClick = () => {
-    // console.log('clicked id', id);
     setToggleVolunteer(!toggleVolunteer);
     dispatch({ type: 'TOGGLE_VOLUNTEER', id });
-  };
-
-  const details = {
-    id,
-    title,
-    startEndDate,
-    startEndTime,
-    volunteer,
-    imgURL,
-    desc,
-    skills,
-    goodFor,
-    requirements,
-    location
   };
 
   return (
@@ -57,7 +29,7 @@ const Event = ({ event }) => {
       <Link
         to={{
           pathname: `/event/${slugifyTitle(title)}`,
-          state: details
+          state: event
         }}
       >
         <img src={imgURL} alt={title} />
@@ -81,7 +53,7 @@ const Event = ({ event }) => {
         <Link
           to={{
             pathname: `/event/${slugifyTitle(title)}`,
-            state: details
+            state: event
           }}
         >
           <h2 data-testid="event-title">{title}</h2>

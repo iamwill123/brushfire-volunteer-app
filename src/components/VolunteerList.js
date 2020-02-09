@@ -1,14 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import { store } from '../store';
 import Event from './Event';
 
 const VolunteerList = () => {
-  const { state } = useContext(store);
-  const [volunteerList, setVolunteerList] = useState([]);
-
-  useEffect(() => {
-    setVolunteerList(state);
-  }, [state]);
+  const { state: volunteerList } = useContext(store);
 
   return (
     <div className="volunteer-list">

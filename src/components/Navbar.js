@@ -4,7 +4,6 @@ import BrushFireLogo from '../icons/bf-logo-full-light-480.png';
 
 export const Navbar = ({ theme }) => {
   const [scrolling, setScrolling] = useState(false);
-  // const [scrollTop, setScrollTop] = useState(0);
 
   useEffect(() => {
     const onScroll = e => {
