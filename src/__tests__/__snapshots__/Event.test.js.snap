@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Event /> component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="event-card"
+  >
+    <a
+      href="/event/sports-instructor"
+    >
+      <img
+        alt="Sports Instructor"
+        src="https://source.unsplash.com/ViJe3T1m5KE/800x450"
+      />
+    </a>
+    <div
+      class="event-volunteer-btn"
+    >
+      <span>
+        <input
+          readonly=""
+          type="checkbox"
+        />
+        <span
+          data-testid="volunteer-toggle-0"
+        >
+          Volunteer
+        </span>
+      </span>
+    </div>
+    <div
+      class="event-desc"
+    >
+      <div
+        class="event-date"
+        data-testid="event-date"
+      >
+        Mon Feb 06, 2020 - Tue Jun 30, 2020
+      </div>
+      <div
+        data-testid="event-time"
+      >
+        1:00 PM - 9:00 PM
+      </div>
+      <a
+        href="/event/sports-instructor"
+      >
+        <h2
+          data-testid="event-title"
+        >
+          Sports Instructor
+        </h2>
+      </a>
+      <sub>
+        with I'RAISE Girls & Boys International
+      </sub>
+      <p
+        class="event-location"
+        data-testid="event-location"
+      >
+        495 3rd Ave. Brooklyn, NY 11215
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;

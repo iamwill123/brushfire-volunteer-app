@@ -1,0 +1,416 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EventList /> component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="page-divider"
+  >
+    <div
+      class="filter-search"
+    >
+      <input
+        class="input"
+        placeholder="Search by org or title..."
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    class="sort-selector"
+  >
+    <span>
+      <input
+        readonly=""
+        type="checkbox"
+      />
+      <span>
+        most recent
+      </span>
+    </span>
+    <span>
+      <input
+        readonly=""
+        type="checkbox"
+      />
+      <span>
+        organization
+      </span>
+    </span>
+  </div>
+  <div
+    class="event-list"
+  >
+    <h2
+      class="list-title"
+    >
+      Volunteer in New York
+    </h2>
+    <div
+      class="row"
+      data-testid="event-list"
+    >
+      <div
+        class="event-card"
+      >
+        <a
+          href="/event/sports-instructor"
+        >
+          <img
+            alt="Sports Instructor"
+            src="https://source.unsplash.com/ViJe3T1m5KE/800x450"
+          />
+        </a>
+        <div
+          class="event-volunteer-btn"
+        >
+          <span>
+            <input
+              readonly=""
+              type="checkbox"
+            />
+            <span
+              data-testid="volunteer-toggle-0"
+            >
+              Volunteer
+            </span>
+          </span>
+        </div>
+        <div
+          class="event-desc"
+        >
+          <div
+            class="event-date"
+            data-testid="event-date"
+          >
+            Mon Feb 06, 2020 - Tue Jun 30, 2020
+          </div>
+          <div
+            data-testid="event-time"
+          >
+            1:00 PM - 9:00 PM
+          </div>
+          <a
+            href="/event/sports-instructor"
+          >
+            <h2
+              data-testid="event-title"
+            >
+              Sports Instructor
+            </h2>
+          </a>
+          <sub>
+            with I'RAISE Girls & Boys International
+          </sub>
+          <p
+            class="event-location"
+            data-testid="event-location"
+          >
+            495 3rd Ave. Brooklyn, NY 11215
+          </p>
+        </div>
+      </div>
+      <div
+        class="event-card"
+      >
+        <a
+          href="/event/creative-director"
+        >
+          <img
+            alt="Creative Director"
+            src="https://source.unsplash.com/4H67yWXO2-M/800x450"
+          />
+        </a>
+        <div
+          class="event-volunteer-btn"
+        >
+          <span>
+            <input
+              readonly=""
+              type="checkbox"
+            />
+            <span
+              data-testid="volunteer-toggle-1"
+            >
+              Volunteer
+            </span>
+          </span>
+        </div>
+        <div
+          class="event-desc"
+        >
+          <div
+            class="event-date"
+            data-testid="event-date"
+          >
+            Mon Feb 16, 2020 - Tue July 10, 2020
+          </div>
+          <div
+            data-testid="event-time"
+          >
+            12:00 PM - 2:00 PM
+          </div>
+          <a
+            href="/event/creative-director"
+          >
+            <h2
+              data-testid="event-title"
+            >
+              Creative Director
+            </h2>
+          </a>
+          <sub>
+            with Hosh Yoga
+          </sub>
+          <p
+            class="event-location"
+            data-testid="event-location"
+          >
+            55 Nassau Ave. Brooklyn, NY 11222
+          </p>
+        </div>
+      </div>
+      <div
+        class="event-card"
+      >
+        <a
+          href="/event/change-kids-lives"
+        >
+          <img
+            alt="Change Kids' Lives"
+            src="https://source.unsplash.com/bTp32-t6K7c/800x450"
+          />
+        </a>
+        <div
+          class="event-volunteer-btn"
+        >
+          <span>
+            <input
+              readonly=""
+              type="checkbox"
+            />
+            <span
+              data-testid="volunteer-toggle-2"
+            >
+              Volunteer
+            </span>
+          </span>
+        </div>
+        <div
+          class="event-desc"
+        >
+          <div
+            class="event-date"
+            data-testid="event-date"
+          >
+            Mon Mar 01, 2020 - Fri Jun 30, 2020
+          </div>
+          <div
+            data-testid="event-time"
+          >
+            4:00 PM - 6:00 PM
+          </div>
+          <a
+            href="/event/change-kids-lives"
+          >
+            <h2
+              data-testid="event-title"
+            >
+              Change Kids' Lives
+            </h2>
+          </a>
+          <sub>
+            with Hosh Yoga
+          </sub>
+          <p
+            class="event-location"
+            data-testid="event-location"
+          >
+            55 Nassau Ave. Brooklyn, NY 11222
+          </p>
+        </div>
+      </div>
+      <div
+        class="event-card"
+      >
+        <a
+          href="/event/physical-activity-coach"
+        >
+          <img
+            alt="Physical Activity Coach"
+            src="https://source.unsplash.com/mse1vdzZXjA/800x450"
+          />
+        </a>
+        <div
+          class="event-volunteer-btn"
+        >
+          <span>
+            <input
+              readonly=""
+              type="checkbox"
+            />
+            <span
+              data-testid="volunteer-toggle-3"
+            >
+              Volunteer
+            </span>
+          </span>
+        </div>
+        <div
+          class="event-desc"
+        >
+          <div
+            class="event-date"
+            data-testid="event-date"
+          >
+            Mon Jan 06, 2020 - Fri Sept 30, 2020
+          </div>
+          <div
+            data-testid="event-time"
+          >
+            1:00 PM - 2:00 PM
+          </div>
+          <a
+            href="/event/physical-activity-coach"
+          >
+            <h2
+              data-testid="event-title"
+            >
+              Physical Activity Coach
+            </h2>
+          </a>
+          <sub>
+            with POSITIVE TRANSITIONING INC
+          </sub>
+          <p
+            class="event-location"
+            data-testid="event-location"
+          >
+            Virtual Opportunity
+          </p>
+        </div>
+      </div>
+      <div
+        class="event-card"
+      >
+        <a
+          href="/event/prayer-line-volunteer"
+        >
+          <img
+            alt="Prayer Line Volunteer"
+            src="https://source.unsplash.com/rzmQOng8h8I/800x450"
+          />
+        </a>
+        <div
+          class="event-volunteer-btn"
+        >
+          <span>
+            <input
+              readonly=""
+              type="checkbox"
+            />
+            <span
+              data-testid="volunteer-toggle-4"
+            >
+              Volunteer
+            </span>
+          </span>
+        </div>
+        <div
+          class="event-desc"
+        >
+          <div
+            class="event-date"
+            data-testid="event-date"
+          >
+            Mon Jan 01, 2020 - Fri Sept 30, 2020
+          </div>
+          <div
+            data-testid="event-time"
+          >
+            3:00 PM - 5:00 PM
+          </div>
+          <a
+            href="/event/prayer-line-volunteer"
+          >
+            <h2
+              data-testid="event-title"
+            >
+              Prayer Line Volunteer
+            </h2>
+          </a>
+          <sub>
+            with POSITIVE TRANSITIONING INC
+          </sub>
+          <p
+            class="event-location"
+            data-testid="event-location"
+          >
+            Virtual Opportunity
+          </p>
+        </div>
+      </div>
+      <div
+        class="event-card"
+      >
+        <a
+          href="/event/tutoring-and-mentoring"
+        >
+          <img
+            alt="Tutoring & Mentoring"
+            src="https://source.unsplash.com/5fNmWej4tAA/800x450"
+          />
+        </a>
+        <div
+          class="event-volunteer-btn"
+        >
+          <span>
+            <input
+              readonly=""
+              type="checkbox"
+            />
+            <span
+              data-testid="volunteer-toggle-5"
+            >
+              Volunteer
+            </span>
+          </span>
+        </div>
+        <div
+          class="event-desc"
+        >
+          <div
+            class="event-date"
+            data-testid="event-date"
+          >
+            Mon Mar 11, 2020 - Tue Oct 30, 2020
+          </div>
+          <div
+            data-testid="event-time"
+          >
+            3:00 PM - 5:00 PM
+          </div>
+          <a
+            href="/event/tutoring-and-mentoring"
+          >
+            <h2
+              data-testid="event-title"
+            >
+              Tutoring & Mentoring
+            </h2>
+          </a>
+          <sub>
+            with Youth Potential Academy
+          </sub>
+          <p
+            class="event-location"
+            data-testid="event-location"
+          >
+            10 Grand Army Plaza. Brooklyn, NY 11238
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

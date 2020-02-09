@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="nav-wrapper"
+    >
+      <ul
+        class="nav"
+      >
+        <li>
+          <a
+            href="/"
+            style="border-bottom: 0px; padding-bottom: 0px;"
+          >
+            <img
+              alt="Brushfire fire logo"
+              class="brushfire-logo"
+              src="bf-logo-full-light-480.png"
+              style="background: rgb(209, 65, 12);"
+            />
+          </a>
+        </li>
+        <ul>
+          <li>
+            <a
+              aria-current="page"
+              class="selectedLink"
+              href="/"
+            >
+              Explore
+            </a>
+          </li>
+          <li>
+            <a
+              href="/volunteer"
+            >
+              Your Events
+            </a>
+          </li>
+        </ul>
+      </ul>
+    </div>
+    <div
+      class="header"
+    >
+      <img
+        alt="volunteer logo"
+        class="volunteer-logo"
+        src="volunteer-logo.png"
+      />
+      <h1>
+        Find your next volunteer opportunity
+      </h1>
+      <span>
+        6 events near you
+      </span>
+      <div
+        class="toggleModeWrapper"
+      >
+        <button
+          class="sc-AxjAm bQtEZV"
+        >
+          <svg>
+            sun.svg
+          </svg>
+          <svg>
+            moon.svg
+          </svg>
+        </button>
+      </div>
+    </div>
+    Loading...
+  </div>
+  <footer>
+    <span>
+      Brushfire Volunteer App
+    </span>
+    <br />
+    <span>
+      By: William Pei Yuan
+    </span>
+  </footer>
+</DocumentFragment>
+`;
