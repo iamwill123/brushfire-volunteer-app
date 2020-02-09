@@ -252,6 +252,12 @@ export const GlobalStyles = createGlobalStyle`
     max-width: 1200px;
     margin: 0 auto;
 
+    @media screen and (max-width: 700px) {
+      .event-details {
+        padding: 10px;
+      }
+    }
+
     .more-info {
       margin-top: 30px;
       li {

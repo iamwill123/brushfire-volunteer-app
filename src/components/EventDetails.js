@@ -37,7 +37,7 @@ const EventDetails = props => {
             <img src={imgURL} alt={title} />
             <div dangerouslySetInnerHTML={createMarkup()} />
           </div>
-          <div className="event-date">
+          <div className="event-details">
             <p data-testid="event-date" className="event-date">
               {startEndDate}
             </p>
