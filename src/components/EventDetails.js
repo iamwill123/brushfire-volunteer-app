@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { store } from '../store';
+import { object } from 'prop-types';
 
 const EventDetails = props => {
   const {
@@ -85,6 +86,10 @@ const EventDetails = props => {
       </div>
     </>
   );
+};
+
+EventDetails.propTypes = {
+  location: object.isRequired
 };
 
 export default EventDetails;

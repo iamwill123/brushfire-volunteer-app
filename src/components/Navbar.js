@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import BrushFireLogo from '../icons/bf-logo-full-light-480.png';
+import { string } from 'prop-types';
 
 export const Navbar = ({ theme }) => {
   const [scrolling, setScrolling] = useState(false);
@@ -47,4 +48,8 @@ export const Navbar = ({ theme }) => {
       </ul>
     </div>
   );
+};
+
+Navbar.propTypes = {
+  theme: string.isRequired
 };

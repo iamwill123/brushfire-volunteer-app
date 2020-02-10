@@ -38,7 +38,6 @@ export const GlobalStyles = createGlobalStyle`
   }
   img {
     width: 100%;
-    /* border-radius: 10px; */
   }
 
   .header {
@@ -70,7 +69,6 @@ export const GlobalStyles = createGlobalStyle`
       border-radius: 50px;
       display: inline-block;
       background: ${({ theme }) => theme.body};
-      /* border: 1px solid ; */
       border: 1px solid ${({ theme }) => theme.border};
       transition: all 0.25s linear;
       margin-right: 10px;
@@ -143,10 +141,8 @@ export const GlobalStyles = createGlobalStyle`
       justify-content: center;
 
       .event-card {
-        /* border: 2px solid ${({ theme }) => theme.text}; */
         padding: 0px;
         width: 30%;
-        /* border-radius: 10px; */
         margin: 10px;
         -webkit-box-shadow: ${({ theme }) => theme.boxShadowDefault};
         box-shadow: ${({ theme }) => theme.boxShadowDefault};
@@ -155,10 +151,7 @@ export const GlobalStyles = createGlobalStyle`
         .event-date {
           color: #d1410c;
         }
-        /* .event-time {
-        }
-        .event-location {
-        } */
+
         .event-desc {
           padding: 25px;
         }
@@ -180,7 +173,6 @@ export const GlobalStyles = createGlobalStyle`
             border-radius: 50px;
             display: inline-block;
             background: ${({ theme }) => theme.body};
-            /* border: 1px solid ; */
             border: 1px solid ${({ theme }) => theme.border};
             transition: all 0.25s linear;
 
@@ -305,7 +297,6 @@ export const GlobalStyles = createGlobalStyle`
         display: inline-block;
         background: ${({ theme }) => theme.text};
         color: ${({ theme }) => theme.body};
-        /* border: 1px solid ; */
         border: 1px solid ${({ theme }) => theme.border};
         transition: all 0.25s linear;
 
@@ -355,7 +346,6 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .selectedLink {
-      /* background: ${({ theme }) => theme.body}; */
       color: ${({ theme }) => theme.text};
       border-bottom: 2px solid ${({ theme }) => theme.text};
       padding-bottom: 5px;
@@ -368,7 +358,6 @@ export const GlobalStyles = createGlobalStyle`
       transition: all 0.25s linear;
 
       &:hover {
-        /* background: ${({ theme }) => theme.body}; */
         color: ${({ theme }) => theme.text};
         border-bottom: 2px solid ${({ theme }) => theme.border};
         transition: all 0.25s linear;

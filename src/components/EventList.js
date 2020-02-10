@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Event from './Event';
+import { array } from 'prop-types';
+
 import { SortEventListSelector } from './SortEventListSelector';
 
 const EventList = ({ eventList }) => {
@@ -57,6 +59,10 @@ const EventList = ({ eventList }) => {
       </div>
     </>
   );
+};
+
+EventList.propTypes = {
+  eventList: array.isRequired
 };
 
 export default EventList;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { object } from 'prop-types';
 
 export const NoMatch = ({ location }) => (
   <div>
@@ -7,3 +8,7 @@ export const NoMatch = ({ location }) => (
     </h3>
   </div>
 );
+
+NoMatch.propTypes = {
+  location: object.isRequired
+};

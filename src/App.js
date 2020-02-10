@@ -4,7 +4,6 @@ import EventList from './components/EventList';
 import VolunteerList from './components/VolunteerList';
 import EventDetails from './components/EventDetails';
 import { store } from './store';
-// import { SortEventListSelector } from './components/SortEventListSelector';
 
 import { ThemeProvider } from 'styled-components';
 import { useDarkMode } from './styles/useDarkMode';
@@ -40,9 +39,7 @@ function App() {
               <Route path="/">
                 <EventList eventList={eventList} />
               </Route>
-              <Route>
-                <NoMatch />
-              </Route>
+              <Route component={NoMatch} />
             </Switch>
           </div>
         </Router>

@@ -1,11 +1,16 @@
 import React from 'react';
 import ToggleModes from './ToggleModes';
 import VolunteerLogo from '../icons/volunteer-logo.png';
+import { func, string } from 'prop-types';
 
 export const Header = ({ theme, toggleTheme }) => {
   return (
     <div className="header">
-      <img className='volunteer-logo' src={VolunteerLogo} alt="volunteer logo" />
+      <img
+        className="volunteer-logo"
+        src={VolunteerLogo}
+        alt="volunteer logo"
+      />
       <h1>Find your next volunteer opportunity</h1>
       <span>6 events near you</span>
       <div className="toggleModeWrapper">
@@ -13,4 +18,9 @@ export const Header = ({ theme, toggleTheme }) => {
       </div>
     </div>
   );
+};
+
+Header.propTypes = {
+  theme: string.isRequired,
+  toggleTheme: func.isRequired
 };

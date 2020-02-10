@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { store } from '../store';
 import { slugifyTitle } from '../utils/slugifyTitle';
+import { object } from 'prop-types';
 
 const Event = ({ event }) => {
   const {
@@ -65,6 +66,10 @@ const Event = ({ event }) => {
       </div>
     </div>
   );
+};
+
+Event.propTypes = {
+  event: object.isRequired
 };
 
 export default Event;

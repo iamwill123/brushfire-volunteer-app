@@ -50,12 +50,6 @@ const reducer = (state, action) => {
         };
         const newState = state.slice().sort(byOrganization);
         return newState;
-        // A nice to have
-        // } else if (sortBy === 'virtual') {
-        //   const newFilteredState = state.filter(event =>
-        //     event['location'].toLowerCase().includes(sortBy)
-        //   );
-        //   return newFilteredState;
       } else {
         return state;
       }
