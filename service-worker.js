@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/brushfire-volunteer-app/precache-manifest.c7db99953b467cf1cf2d51da5ff755b6.js"
+  "/brushfire-volunteer-app/precache-manifest.aecd1313ec2f94690515e3b33ba14b62.js"
 );
 
 self.addEventListener('message', (event) => {
