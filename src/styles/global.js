@@ -1,5 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
+// https://styled-components.com/docs/api#helpers
+// A helper function to generate a special StyledComponent that handles global styles. Normally, styled components are automatically scoped to a local CSS class and therefore isolated from other components. In the case of createGlobalStyle, this limitation is removed and things like CSS resets or base stylesheets can be applied.
+
 export const GlobalStyles = createGlobalStyle`
   .debug-outline {
     border: 1px solid red;

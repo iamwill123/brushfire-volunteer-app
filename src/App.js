@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import EventList from './components/EventList';
 import VolunteerList from './components/VolunteerList';
 import EventDetails from './components/EventDetails';
-import { store } from './store';
+import { useEvents } from './store';
 
 import { ThemeProvider } from 'styled-components';
 import { useDarkMode } from './styles/useDarkMode';
@@ -15,15 +15,17 @@ import { Navbar } from './components/Navbar';
 import { NoMatch } from './components/NoMatch';
 
 function App() {
-  const { state: eventList } = useContext(store);
+  const { state: eventList } = useEvents();
 
+  // custom hook
   const [theme, toggleTheme, componentMounted] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
   if (!componentMounted) {
     return <div>Loading...</div>;
   }
-
+  // Since the GlobalStyles component is a StyledComponent, it has access to theming from the <ThemeProvider> component.
+  // A helper component for theming. Injects the theme into all styled components anywhere beneath it in the component tree, via the context API
   return (
     <ThemeProvider theme={themeMode}>
       <>

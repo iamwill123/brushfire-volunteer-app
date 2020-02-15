@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { store } from '../store';
+import { useEvents } from '../store';
 import { slugifyTitle } from '../utils/slugifyTitle';
 import { object } from 'prop-types';
 
@@ -18,11 +18,11 @@ const Event = ({ event }) => {
 
   const [toggleVolunteer, setToggleVolunteer] = useState(volunteer);
 
-  const { dispatch } = useContext(store);
+  const { toggleVolunteering } = useEvents();
 
   const toggleClick = () => {
-    setToggleVolunteer(!toggleVolunteer);
-    dispatch({ type: 'TOGGLE_VOLUNTEER', id });
+    setToggleVolunteer(prevToggleVolunteer => !prevToggleVolunteer);
+    toggleVolunteering(id);
   };
 
   return (

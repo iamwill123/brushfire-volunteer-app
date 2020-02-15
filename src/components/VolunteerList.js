@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
-import { store } from '../store';
+import React from 'react';
+import { useEvents } from '../store';
 import Event from './Event';
 
 const VolunteerList = () => {
-  const { state: volunteerList } = useContext(store);
+  const { state: volunteerList } = useEvents();
 
   return (
     <div className="volunteer-list">

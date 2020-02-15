@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Event from './Event';
 import { array } from 'prop-types';
 
@@ -6,6 +6,15 @@ import { SortEventListSelector } from './SortEventListSelector';
 
 const EventList = ({ eventList }) => {
   const [inputVal, setinputVal] = useState('');
+  const [sortVal, setSortVal] = useState('');
+  const inputRef = useRef(null);
+
+  const handleFocus = () => {
+    inputRef.current.focus();
+  };
+
+  const sortVirtual = value => setSortVal(value);
+  const resetInput = () => setinputVal('');
 
   const handleChange = event => {
     // If the search bar isn't empty
@@ -17,7 +26,7 @@ const EventList = ({ eventList }) => {
     }
   };
 
-  if (!eventList) return 'Loading...';
+  if (!eventList) return 'Loading...'; // don't need
 
   const filteredEventList = eventList.filter(event => {
     if (inputVal !== '') {
@@ -26,15 +35,19 @@ const EventList = ({ eventList }) => {
       const filterVal = inputVal.toLowerCase();
 
       return lcTitle.includes(filterVal) || lcOrg.includes(filterVal);
+    } else if (sortVal) {
+      const lcLoc = event.location.toLowerCase();
+      return lcLoc.includes(sortVal);
     } else {
       return eventList;
     }
   });
 
   const FilterSearchInput = (
-    <div className="page-divider">
+    <div className="page-divider" onClick={handleFocus}>
       <div className="filter-search">
         <input
+          ref={inputRef}
           type="text"
           className="input"
           value={inputVal}
@@ -48,7 +61,10 @@ const EventList = ({ eventList }) => {
   return (
     <>
       {FilterSearchInput}
-      <SortEventListSelector />
+      <SortEventListSelector
+        sortVirtual={sortVirtual}
+        resetInput={resetInput}
+      />
       <div className="event-list">
         <h2 className="list-title">Volunteer in New York</h2>
         <div className="row" data-testid="event-list">

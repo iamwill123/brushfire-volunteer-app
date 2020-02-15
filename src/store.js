@@ -1,10 +1,11 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useReducer, useContext, useMemo } from 'react';
 import { dateTimeNow } from './utils/dateGenerator';
 import { mockEventList } from './utils/sampleMockEvent';
 
 const initialState = mockEventList; // sample events
-const store = createContext(initialState);
-const { Provider } = store;
+// When there's no Provider, the defaultValue argument is used for function createContext
+const EventsContext = createContext(initialState);
+const { Provider: EventsProvider } = EventsContext;
 
 function init(initialState) {
   return initialState;
@@ -32,7 +33,7 @@ const reducer = (state, action) => {
     case 'SORT_BY': {
       const { sortBy = '' } = action;
 
-      if (sortBy === 'most recent') {
+      if (sortBy === 'recently created') {
         // sort by most recent date
         const byMostRecent = (a, b) => {
           if (a.createdAt < b.createdAt) return 1;
@@ -63,9 +64,34 @@ const reducer = (state, action) => {
   }
 };
 
+// Could use useState and not useReducer, but useReducer is scalable in this case.
 const StateProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState, init);
-  return <Provider value={{ state, dispatch }}>{children}</Provider>;
+  const value = useMemo(() => [state, dispatch], [state]);
+  return <EventsProvider value={value}>{children}</EventsProvider>;
 };
 
-export { store, StateProvider };
+// custom useEvents hook clean things out
+const useEvents = () => {
+  const context = useContext(EventsContext);
+  if (!context) {
+    throw new Error(`useEvents must be used within a EventsProvider`);
+  }
+
+  const [state, dispatch] = context;
+
+  // clearer to add all dispatches in one place
+  const toggleVolunteering = id => dispatch({ type: 'TOGGLE_VOLUNTEER', id });
+  const sortEventsBy = sortBy => dispatch({ type: 'SORT_BY', sortBy });
+  const resetEventsList = () => dispatch({ type: 'RESET' });
+
+  return {
+    state, // if we want to access state
+    dispatch, // if we want to access dispatch func
+    toggleVolunteering,
+    sortEventsBy,
+    resetEventsList
+  };
+};
+
+export { EventsContext, StateProvider, useEvents };

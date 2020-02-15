@@ -1,15 +1,17 @@
-import React, { useState, useContext } from 'react';
-import { store } from '../store';
+import React, { useState } from 'react';
+import { useEvents } from '../store';
+import { func } from 'prop-types';
 
-export const SortEventListSelector = () => {
+export const SortEventListSelector = ({ sortVirtual, resetInput }) => {
   const sortBy = [
-    { name: 'most recent', selected: false },
+    { name: 'recently created', selected: false },
     { name: 'organization', selected: false },
-    // { name: 'virtual', selected: false } <- a nice to have
+    { name: 'virtual', selected: false },
+    { name: 'reset', selected: false }
   ];
 
   const [sortArray, setSortArray] = useState(sortBy);
-  const { dispatch } = useContext(store);
+  const { sortEventsBy, resetEventsList } = useEvents();
 
   const handleChange = event => {
     const name = event.target.innerText;
@@ -20,7 +22,17 @@ export const SortEventListSelector = () => {
     );
 
     setSortArray(updatedSort);
-    dispatch({ type: 'SORT_BY', sortBy: name });
+
+    if (name === 'reset') {
+      resetInput(''); // resets input field as well
+      sortVirtual(''); // reset after
+      resetEventsList(); // reset to initial state of events via useEvents customHook
+    } else if (name === 'virtual') {
+      sortVirtual(name); // lift state up for virtual sort
+    } else {
+      sortVirtual(''); // reset after
+      sortEventsBy(name); // useEvents customHook
+    }
   };
 
   return (
@@ -33,4 +45,9 @@ export const SortEventListSelector = () => {
       ))}
     </div>
   );
+};
+
+SortEventListSelector.propTypes = {
+  sortVirtual: func.isRequired,
+  resetInput: func.isRequired
 };

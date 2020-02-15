@@ -1,5 +1,5 @@
-import React, { useState, useContext } from 'react';
-import { store } from '../store';
+import React, { useState } from 'react';
+import { useEvents } from '../store';
 import { object } from 'prop-types';
 
 const EventDetails = props => {
@@ -18,11 +18,11 @@ const EventDetails = props => {
   } = props.location.state;
 
   const [toggleVolunteer, setToggleVolunteer] = useState(volunteer);
-  const { dispatch } = useContext(store);
+  const { toggleVolunteering } = useEvents();
 
   const toggleClick = () => {
     setToggleVolunteer(!toggleVolunteer);
-    dispatch({ type: 'TOGGLE_VOLUNTEER', id });
+    toggleVolunteering(id);
   };
 
   const createMarkup = () => {

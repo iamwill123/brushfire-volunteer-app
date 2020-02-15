@@ -2,6 +2,11 @@ import React from 'react';
 import ToggleModes from './ToggleModes';
 import VolunteerLogo from '../icons/volunteer-logo.png';
 import { func, string } from 'prop-types';
+import styled from 'styled-components';
+
+const StyledH1 = styled.h1`
+  color: ${({ theme }) => (theme.text === '#363537' ? '#750954' : '#139b9e')};
+`;
 
 export const Header = ({ theme, toggleTheme }) => {
   return (
@@ -11,7 +16,7 @@ export const Header = ({ theme, toggleTheme }) => {
         src={VolunteerLogo}
         alt="volunteer logo"
       />
-      <h1>Find your next volunteer opportunity</h1>
+      <StyledH1>Find your next volunteer opportunity</StyledH1>
       <span>6 events near you</span>
       <div className="toggleModeWrapper">
         <ToggleModes theme={theme} toggleTheme={toggleTheme} />

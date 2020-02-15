@@ -19,7 +19,8 @@ export const useDarkMode = () => {
 
   useEffect(() => {
     const localTheme = window.localStorage.getItem('theme');
-
+    // https://web.dev/prefers-color-scheme/
+    // Finding out if dark mode is supported by the browser, if so set to dark mode.
     window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !localTheme ?
       setMode('dark') :
       localTheme ?
